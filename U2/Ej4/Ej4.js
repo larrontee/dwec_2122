@@ -1,0 +1,11 @@
+alert(null == undefined);//true
+alert("NaN" == NaN);//false
+alert(5 == NaN);//false
+alert(NaN == NaN);//false
+alert(NaN != NaN);//true
+alert(false == 0);//true
+alert(true == 1);//true
+alert(true == 2);//false
+alert(undefined == 0);//false 
+alert(null == 0);//false
+alert("5" == 5);//true
