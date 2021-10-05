@@ -12,32 +12,30 @@
 // Ejercicio 3:
 // Crear un bucle desde 1 hasta 500 donde se muestre en consola únicamente los números múltiplos de 3 y 
 // el  número de números que no son primos. Nota: Aplicar modulo (%)
-var c = 500;
-var j = 2;
-var numerosPrimos = [];
+// var c = 500;
+// var j = 2;
+// var numerosPrimos = [];
 
-for (; j < c; j++) {
+// for (; j < c; j++) {
 
-    if (primo(j)) {
-        numerosPrimos.push(j);
-    }
+//     if (primo(j)) {
+//         numerosPrimos.push(j);
+//     }
 
-}
+// }
 
-console.log(numerosPrimos);
+// console.log(numerosPrimos);
 
-function primo(numero) {
+// function primo(numero) {
 
-    for (var i = 2; i < numero; i++) {
+//     for (var i = 2; i < numero; i++) {
+//         if (numero % i === 0) {
+//             return false;
+//         }
+//     }
 
-        if (numero % i === 0) {
-            return false;
-        }
-
-    }
-
-    return numero !== 1;
-}
+//     return numero !== 1;
+// }
 
 
 // Ejercicio 4:
@@ -57,7 +55,23 @@ function primo(numero) {
 // Escribe un programa que pida al usuario un día de la semana y que muestre por consola el día siguiente. 
 // Si se introduce un valor que no corresponda a un día de la semana, se le mostrará un mensaje al usuario.
 
+// enunciado = input("");
+
+
 // Ejercicio 7:
 // Sabiendo que cuando desplazamos 1 bit a la derecha, dividimos un entero por 2 y cuando lo desplazamos 
 // a la izquierda estamos multiplicando por 2. Desarrolla una aplicación que imprima el resultado de las 
 // siguientes operaciones empleando desplazamiento de bits:
+
+
+// 125 / 8  
+// 40 x 4 
+// 25 / 2 
+// 10 x 16 
+
+
+
+console.log(num << 3);
+console.log(num >> 3);
+console.log(num >> 3);
+console.log(num << 3);

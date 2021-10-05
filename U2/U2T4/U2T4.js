@@ -18,12 +18,12 @@
 //El script, como ayuda al usuario, mostrará ejemplos de distintas densidades y realizará la pregunta “Qué densidad tiene el material elegido”:
 //Si la densidad es menor de 1 el material flotará, si es mayor se hundirá, mostrando las siguientes alertas según sea el caso:
 
-let enunc = prompt("¿Qué densidad tiene el material elegido?");
-if (enunc >= 1 && !isNaN(enunc)) {
-    alert("Se hunde el material")
-} else if (!isNaN(enunc)) {
-    alert("flota")
-}
+// let enunc = prompt("¿Qué densidad tiene el material elegido?");
+// if (enunc >= 1 && !isNaN(enunc)) {
+//     alert("Se hunde el material")
+// } else if (!isNaN(enunc)) {
+//     alert("flota")
+// }
 
 //Ejercicio 3
 
