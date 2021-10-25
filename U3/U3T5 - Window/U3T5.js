@@ -1,28 +1,84 @@
-// Ejercicio 1
+let ventana;
 
-// Crea un programa que tenga botones para permitir modificar las
-// propiedades de una  ventana:
+function crearVentana() {
+    let confirmacion = confirm("¿Está de acuerdo en abrir una nueva ventana?");
 
-//Abrir una ventana nueva:
-//Debes preguntar al usuario si está de acuerdo o no, y solo si acepta se abrirá la nueva ventana.
-//La nueva ventana tendrá las siguientes propiedades: no tendrá barrade herramientas, ni location
-//ni barra de  menú, ni será redimensionable. Tendrá 200x80 píxeles y se posicionará en 500x500 píxeles.
-//La nueva ventana incluirá un pequeño texto y un botón que al hacer clic cerrará la ventana.
-//Cerrar la ventana creada: si la ventana está cerrada mostrará un mensaje de error.
-//Mover la ventana 10 píxeles a la derecha y abajo.
-//Mover la ventana a la posición 100,100.
-//Aumentar el tamaño de la ventana 10 píxeles de ancho y largo.
-//Aumentar el tamaño de la ventana a 400x200.
-//Colocar el scroll de la ventana arriba del todo.
-//Colocar el scroll de la ventana a 10 píxeles de la parte superior.
-//Todos los botones, exceptoel primero y el segundo, los puedes programar diréctamente mediante la  
-// propiedad onClick, 
-//por ejemplo: <input type=“button” value=“Imprimir” onClick=“print()”/>
-//Recuerda que no es necesario utilizar “window” delante de la propiedad.
+    if (confirmacion) {
+        ventana = window.open(
+            "",
+            "",
+            "toolbar=no,location=no,resizable=no,width=200,height=80,top=500,left=500"
+        );
+
+        ventana.document.write(
+            '<p>pequeño texto</p><button onclick="window.close()">cerrar</button>'
+        );
+        for (let i = 0; i < 400; i++) {
+            ventana.document.write("<br/>");
+        }
+    } else {
+        alert("Se ha denegado la creacion de una ventana.");
+    }
+}
+
+function cerrarVentana() {
+    if (ventana != null && !ventana.closed) {
+        ventana.close();
+    } else {
+        alert("La ventana ya está cerrada");
+    }
+}
+
+function moverVentanax10() {
+    if (ventana != null && !ventana.closed) {
+        ventana.moveBy(10, 10);
+    } else {
+        alert("La ventana está cerrada y no se puede realizar esa función.");
+    }
+}
+
+function moverVentana() {
+    if (ventana != null && !ventana.closed) {
+        ventana.moveTo(100, 100);
+    } else {
+        alert("La ventana está cerrada y no se puede realizar esa función.");
+    }
+}
+
+function aumentarx10() {
+    if (ventana != null && !ventana.closed) {
+        ventana.resizeBy(10, 10);
+    } else {
+        alert("La ventana está cerrada y no se puede realizar esa función.");
+    }
+}
+
+function tamano400200() {
+    if (ventana != null && !ventana.closed) {
+        ventana.resizeTo(400, 200);
+    } else {
+        alert("La ventana está cerrada y no se puede realizar esa función.");
+    }
+}
+
+function topScroll() {
+    if (ventana != null && !ventana.closed) {
+        ventana.scrollTo(0, 0);
+    } else {
+        alert("La ventana está cerrada y no se puede realizar esa función.");
+    }
+}
+
+function topScroll10() {
+    if (ventana != null && !ventana.closed) {
+        ventana.scrollTo(0, 10);
+    } else {
+        alert("La ventana está cerrada y no se puede realizar esa función.");
+    }
+}
 
 
-let peticion = prompt("Quieres abrir una nueva ventana?");
 
-if (peticion == "si") {
-    window.open();
+function abrirVentana() {
+    window.open("");
 }
