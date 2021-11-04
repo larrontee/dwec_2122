@@ -26,7 +26,8 @@
 
 // Todas las operaciones que se realicen se irán mostrando en la página con su título.
 
-let paises = ["esp", "fra", "por"];
+var paises = ["esp", "fra", "rus", "por"];
+paisesinvertido = paises.reverse();
 
 function longitud() {
     console.log(paises.length);
@@ -34,12 +35,21 @@ function longitud() {
 }
 
 function mostrar() {
-    console.log(paises().toLocaleString());
-    document.getElementById("data").innerHTML += "<br\> lista " + paises.toLocaleString();
+    console.log(paises);
+    document.getElementById("data").innerHTML += "<br\> lista " + paises.toString();
 }
 
 function mostrarInver() {
-    console.log(paisesinvertido = paises.reverse().toLocaleString());
+    console.log(paisesinvertido);
     document.getElementById("data").innerHTML += "<br\> lista inversa " + paisesinvertido;
+}
+
+function mostrarOrden() {
+    console.log(paises.sort());
+    document.getElementById("data").innerHTML += "<br\> lista ordenada " + paises.sort().toString();
+}
+
+function anadirPrimero(paises, pais) {
+    paises.unshift(pais);
 }
 
