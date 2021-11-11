@@ -30,26 +30,58 @@
 
 
 class Bandeja {
-    constructor(tipo, variedad, cant, hSalida, hUltPastVendido) {
-        this.tipoPastel = tipo;
-        this.variedadPastel = variedad;
-        this.cantidad = cant;
-        this.horaElaboracion = hSalida;
-        this.horaUltPastelVendido = hUltPastVendido;
+    constructor(tipo, variedad, cant, hSalida) {
+        this._tipoPastel = tipo;
+        this._variedadPastel = variedad;
+        this._cantidad = cant;
+        this._horaElaboracion = hSalida;
+        this._horaUltPastelVendido;
     }
 
-    set tipoPastel(tipo){
-        this.tipoPastel = tipo;
+    tiempoDeVenta() {
+
     }
-    get tipoPastel(){
-        return this.tipoPastel;
+
+
+    set tipoPastel(tipo) {
+        this._tipoPastel = tipo;
     }
-   set variedadPastel(variedad){
-        this.variedadPastel = variedad;
+    get tipoPastel() {
+        return this._tipoPastel;
     }
-    get variedadPastel(){
-        return this.variedadPastel;
+    set variedadPastel(variedad) {
+        this._variedadPastel = variedad;
     }
-   
-    
+    get variedadPastel() {
+        return this._variedadPastel;
+    }
+    set cantidad(cant) {
+        this._cantidad = cant;
+    }
+    get cantidad() {
+        return this._cantidad;
+    }
+    set horaElaboracion(hSalida) {
+        this._horaElaboracion = hSalida;
+    }
+    get horaElaboracion() {
+        return this._horaElaboracion;
+    }
+    set horaUltPastelVendido(hSalhUltPastVendidoida) {
+        this._horaUltPastelVendido = hUltPastVendido;
+    }
+    get horaUltPastelVendido() {
+        return this._horaUltPastelVendido;
+    }
+
+}
+
+
+class LaPlata {
+    constructor() {
+        this._mostrador = [];
+    }
+    poner_en_mostrador(bandeja) {
+
+    }
 }
