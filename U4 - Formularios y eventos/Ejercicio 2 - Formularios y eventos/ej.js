@@ -13,35 +13,33 @@
 // Código a ejecutar después de que pase...
 //}, 1000); // ... el número de milisegundos que aquí se especifique, en este caso, 1 segundo.
 
-cHomer = 0;
-cLisa = 0;
-cMaggie = 0;
-cBart = 0;
-cMarge = 0;
-cFlanders = 0;
-contador = 0;
 
 
-lisaTexto = document.getElementById("lisaTexto");
-lisaImg = document.getElementById("lisaImg");
-function mostrarImagen(elemento) {
-    console.log(elemento.childNodes[1]);
-    //elemento.childNodes[1].src = "01_lisa.png";
-    if (elemento.childNodes[1].id === "lisaImg") {
-        elemento.childNodes[1].src = "01_lisa.png";
-        cLisa++;
-        contador++;
+function sumar_puntos(elemento) {
+    array = [];
+    array.push(elemento.childNodes[1].id);
+    if (array.length = 2) {
+        if (array[0] === array[1]) {
+
+        }
     }
-    if (cLisa === 2 && contador === 2) {
-        elemento.childNodes[1].src = "01_lisa.png";
-    } else {
-        elemento.childNodes[1].src = "";
+    else if (array.length > 2) {
+        for (let i = 0; i < array.length; i++) {
+            array.shift();
+        }
     }
-
-
-
-
-
-
 }
+
+lista_imagens = ["01_lisa.png", "01_lisa.png", "02_bart.png", "02_bart.png", "03_homer.png", "03_homer.png", "04_marge.png", "04_marge.png", "05_maggie.png", "05_maggie.png", "06_flanders.png", "06_flanders.png"];
+
+function mostrar_imagen(elemento) {
+    let casilla = elemento.id.split('_')[1];
+    console.log(casilla);
+    elemento.src = lista_imagens[casilla];
+}
+
 lisaTexto.value = "1";
+let array_cartas = document.getElementsByClassName("card");
+for (let i = 0; i < array.length; i++) {
+    array[i].addEventListener("click", mostrar_imagen, false);
+}

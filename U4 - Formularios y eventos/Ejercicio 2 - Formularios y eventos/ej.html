@@ -8,9 +8,10 @@
     <title>Document</title>
     <script src="ej.js"> </script>
     <style>
-        th {
+        .card {
             background-color: red;
-            padding: 40px;
+            height: 40px;
+            width: 40px;
         }
     </style>
 </head>
@@ -18,27 +19,18 @@
 <body>
     <table>
         <tr>
-            <th onclick=mostrarImagen(this) id="lisa">
-                <img src="" alt="" id="lisaImg">
-            </th><input type="text" readonly="readonly" value="0" id="lisaTexto">
-            <th onclick=mostrarImagen(this) id="lisa">
-                <img src="" alt="" id="lisaImg">
-            </th><input type="text" readonly="readonly" value="0" id="lisaTexto">
-            <th></th>
-            <th></th>
-
-        </tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>
+                <input type="image" value="" id="card_0" class="card" onclick=mostrar_imagen(this)>
+                <input type="text" name="" id="">
+            </th>
+            <th>
+                <input type="image" value="" id="card_1" class="card" onclick=mostrar_imagen(this)>
+                <input type="text" name="" id="">
+            </th>
+            <th>
+                <input type="image" value="" id="card_2" class="card" onclick=mostrar_imagen(this)>
+                <input type="text" name="" id="">
+            </th>
         </tr>
     </table>
 </body>
