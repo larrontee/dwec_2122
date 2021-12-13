@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="scrip.js"></script>
+    <style>
+        .inputinvalido {
+            border-color: red;
+        }
+
+        .inputvalido {
+            border-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="etitulo">Titulo</label>
+        <input type="text" name="titulo" id="titulo" value=""><br />
+        <label for="edescripcion">Descripción</label>
+        <textarea name="descripcion" id="descripcion" cols="30" rows="1"></textarea><br />
+        <label for="einfantil">Contenido infantil</label>
+        <input type="checkbox" name="infantil" id="infantil"><br />
+        <label for="eetiquetas">Etiquetas del vídeo</label>
+        <input type="text" name="etiquetas" id="etiquetas"><br />
+        <label for="efecha">Fecha</label>
+        <input type="date" name="fecha" id="fecha"><br />
+        <label for="ehora">Hora</label>
+        <input type="time" name="hora" id="hora"><br />
+        <label for="epassword">Password</label>
+        <input type="password" name="password" id="password"><br />
+        <input type="reset" value="Limpiar" id="limpiar">
+        <input type="submit" value="Enviar" id="enviar">
+    </form>
+    <div id="errores">
+
+    </div>
+</body>
+
+</html>
