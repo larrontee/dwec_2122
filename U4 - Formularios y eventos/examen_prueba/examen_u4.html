@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examen U4 2021/2022</title>
+  <script defer src="script.js"></script>
+
+  <style type="text/css">
+    label {
+      width: 150px;
+
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: 150px;
+
+      margin-bottom: 5px;
+    }
+
+    fieldset {
+      width: 350px;
+      border: thick solid #306;
+    }
+
+    legend {
+      border-top-width: medium;
+      border-right-width: medium;
+      border-bottom-width: medium;
+      border-left-width: medium;
+      border-top-style: solid;
+      border-right-style: solid;
+      border-bottom-style: solid;
+      border-left-style: solid;
+      background-color: #fff;
+    }
+
+    #errores {
+      float: left;
+      background: #ff6633;
+      width: 325px;
+    }
+
+    .error {
+      border: solid 2px #ff0000;
+    }
+
+    .acierto {
+      border: solid 2px green;
+    }
+  </style>
+</head>
+
+<body>
+  <fieldset>
+    <legend>Examen U4 2021/2022</legend>
+    <form name="formulario" id="formulario" action="https://www.google.com/" method="get">
+      <label for="titulo">Título de la Grabación:</label>
+      <input name="titulo" type="text" id="titulo" /><br /><br />
+
+      <label for="tipo">Tipo de Grabación:</label>
+      <select name="tipo" id="tipo">
+        <option value="di">Directo</option>
+        <option value="fa" selected="selected">Falso Directo</option>
+        <option value="ce">Cebo</option>
+        <option value="co">Cola</option>
+      </select><br /><br />
+
+      <label for="fecha">Fecha de Grabación:</label>
+      <input name="fecha" type="text" id="fecha" /><br /><br />
+
+      <label for="codigo">Código de la Grabación:</label>
+      <input name="codigo" type="text" id="codigo" /><br /><br />
+
+      <label for="referencia">Referencia de la Cámara:</label>
+      <input name="referencia" type="text" id="referencia" /><br /><br />
+
+      <label for="pass">Password Periodista:</label>
+      <input name="pass" type="password" id="pass" /><br /><br />
+
+      <input id="fecha_publicacion" name="fecha_publicacion" type="hidden" />
+
+      <input type="reset" name="limpiar" id="limpiar" value="Limpiar" />
+      <input type="submit" name="enviar" id="enviar" value="Enviar" />
+    </form>
+    <div id="errores"></div>
+  </fieldset>
+</body>
+
+</html>
