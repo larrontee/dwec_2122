@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="script.js"></script>
+    <style>
+        .invalido {
+            border-color: red;
+        }
+
+        .valido {
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="etitulo_de_la_grabacion">titulo de la grabacion</label>
+        <input type="text" id="titulo"></br>
+        
+        <label for="etipo_grabacion">tipo grabacion</label>
+        <select name="tipo_grabacion" id="tipo_grabacion">
+            <option value="directo">directo</option>
+            <option value="falso directo" selected>falso directo</option>
+            <option value="cebo">cebo</option>
+            <option value="cola">cola</option>
+        </select></br>
+
+        <label for="efecha_grabacion">fecha grabacion</label>
+        <input type="text" id="fecha_grabacion"></br>
+
+        <label for="ecodigo_gabacion">codigo gabacion</label>
+        <input type="text" id="codigo_gabacion"></br>
+
+        <label for="ereferencia_camara">referencia camara</label>
+        <input type="text" id="codigo_gabacion"></br>
+
+        <label for="ecodigo_gabacion">codigo gabacion</label>
+        <input type="password" id="password"></br>
+
+        <input type="reset" value="limpiar" id="limpiar">
+        <input type="submit" value="enviar" id="enviar">
+    </form>
+    <div class="errores">
+
+    </div>
+</body>
+</html>
