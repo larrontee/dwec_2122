@@ -17,7 +17,6 @@ function generar() {
     muestra.appendChild(tabla);
 
     // tabla.style.color(color.value);
-    tabla.style.border(grosor.value);
 
 
 
@@ -56,4 +55,7 @@ function generar() {
             }
         }
     }
+    tabla.style.borderColor(colorBorde.value);
+    console.log(colorBorde.value);
 }
+
