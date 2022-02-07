@@ -1,0 +1,16 @@
+<series>
+    <serie>
+        <titulo>Sucesion</titulo>
+        <cadena>HBO</cadena>
+        <director>Yo</director>
+        <año>2019</año>
+        <terminada>Si</terminada>
+    </serie>
+    <serie>
+        <titulo>silicom valey</titulo>
+        <cadena>Movidas</cadena>
+        <director>Yo</director>
+        <año>2019</año>
+        <terminada>no</terminada>
+    </serie>
+</series>

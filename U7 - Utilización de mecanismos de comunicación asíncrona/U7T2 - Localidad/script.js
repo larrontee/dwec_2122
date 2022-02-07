@@ -8,19 +8,15 @@ let HTTP_STATUS_OK = 200;
 let HTTP_STATUS_NOT_FOUND = 404;
 let HTTP_STATUS_SERVER_ERROR = 500;
 
+let resultado = document.getElementById("resultado");
 let peticion_http;
-
-let url = "localhost:8090/U7 - Utilización de mecanismos de comunicación asíncrona/U7T2 - Localidad/localidad.php";
-let metodo = "";
 
 function cargaContenido(url, metodo) {
     if (window.XMLHttpRequest) {
         peticion_http = new XMLHttpRequest();
     } else {
         alert("No tienes soporte para AJAX");
-    }
-
-    if (peticion_http) {
+    } if (peticion_http) {
         peticion_http.onreadystatechange = muestraContenido;
         peticion_http.open(metodo, url, true);
         peticion_http.send(null);
@@ -30,18 +26,25 @@ function cargaContenido(url, metodo) {
 function muestraContenido() {
     if (peticion_http.readyState === READY_STATE_COMPLETE) {
         if (peticion_http.status === HTTP_STATUS_OK) {
-            alert(peticion_http.responseText);
-            area.value = peticion_http.responseText;
+            resultado.innerHTML = peticion_http.responseText;
+            if (peticion_http.responseText == "SI") {
+                resultado.style.color = "green";
+            } else {
+                resultado.style.color = "red";
+            }
         }
     }
 }
 
 
-
-function descargaArchivo(url) {
-    cargaContenido("localhost:8090/U7 - Utilización de mecanismos de comunicación asíncrona/U7T2 - Localidad/index.html", "GET");
-    let url = document.getElementById("localidad");
-    let submit = document.getElementById("submit");
+function descargaArchivo() {
+    let localidad = document.getElementById("localidad").value;
+    let url = `/U7 - Utilización de mecanismos de comunicación asíncrona/U7T2 - Localidad/localidad.php?localidad=${localidad}`;
+    cargaContenido(url, "GET");
 }
 
-window.onload = descargaArchivo;
+window.onload = inicio;
+function inicio() {
+    let submit = document.getElementById("submit");
+    submit.addEventListener("click", descargaArchivo);
+}
