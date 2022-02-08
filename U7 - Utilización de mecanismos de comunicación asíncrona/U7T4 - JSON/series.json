@@ -1,0 +1,18 @@
+{
+  "serie": [
+    {
+      "titulo": "A",
+      "cadena": "B",
+      "director": "C",
+      "año": "D",
+      "terminada": "F"
+    },
+    {
+      "titulo": "1",
+      "cadena": "2",
+      "director": "3",
+      "año": "4",
+      "terminada": "5"
+    }
+  ]
+}
