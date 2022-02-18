@@ -1,50 +1,71 @@
-let READY_STATE_LOADING = 1;
-let READY_STATE_UNINITIALIZED = 0;
-let READY_STATE_LOADED = 2;
-let READY_STATE_INTERACTIVE = 3;
-let READY_STATE_COMPLETE = 4;
 
-let HTTP_STATUS_OK = 200;
-let HTTP_STATUS_NOT_FOUND = 404;
-let HTTP_STATUS_SERVER_ERROR = 500;
 
-let resultado = document.getElementById("resultado");
-let peticion_http;
+window.onload = inicio;
+function inicio() {
+    let button = document.getElementById("enviar");
+    let listar = document.getElementById("listar");
+    button.addEventListener("click", enviar);
+    listar.addEventListener("click", listar_series);
 
-function descargaArchivo() {
-    let url = `/U7 - Utilización de mecanismos de comunicación asíncrona/U7T4 - JSON/series.json`;
-
-    cargaContenido(url, "GET");
 }
 
-window.onload = descargaArchivo;
 
-function cargaContenido(url, metodo) {
-    if (window.XMLHttpRequest) {
-        peticion_http = new XMLHttpRequest();
-    } else {
-        alert("No tienes soporte para AJAX");
-    } if (peticion_http) {
-        peticion_http.onreadystatechange = muestraContenido;
-        peticion_http.open(metodo, url, true);
-        peticion_http.send(null);
+
+function enviar() {
+    let muestra = document.getElementById("muestra");
+    let titulo = document.getElementById("Titulo").value;
+    let direction = document.getElementById("Director").value;
+    let cadena = document.getElementById("Cadena").value;
+    let anyo = document.getElementById("Anyo").value;
+    let terminada = document.getElementById("Terminada").value;
+
+    let objeto = {
+        titulo: titulo,
+        director: direction,
+        cadena: cadena,
+        anyo: parseInt(anyo),
+        terminada: terminada
     }
+
+
+    fetch('create_serie.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(objeto)
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (result) {
+            muestra.innerHTML = result;
+            alert(result);
+        })
+        .catch(function (error) {
+            console.log('Request failed', error);
+        });
 }
 
-function muestraContenido() {
-    if (peticion_http.readyState === READY_STATE_COMPLETE) {
-        if (peticion_http.status === HTTP_STATUS_OK) {
-            let oJson = JSON.parse(peticion_http.responseText);
-            generarTabla(oJson);
-        }
-    }
+function listar_series() {
+    fetch('listar_series.php')
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((data) => {
+            generarTabla(data);
+        })
+        .catch((err) => console.log(err));
 }
+
 
 
 function generarTabla(objJson) {
-    let series = objJson.serie;
+    let series = objJson;
     let datos = [];
-    let titulos = ["titulo", "cadena", "director", "año", "terminada"]
+    let titulos = ["titulo", "cadena", "director", "anyo", "terminada"]
     console.log(series[1]["titulo"]);
     for (let i = 0; i < series.length; i++) {
         console.log(series[i]);
@@ -58,13 +79,10 @@ function generarTabla(objJson) {
 }
 
 
-
-
-
 function generar(data) {
     let tabla = document.createElement("table");
     let resultado = document.getElementById("resultado");
-    let titulos = ["titulo", "cadena", "director", "año", "terminada"]
+    let titulos = ["titulo", "cadena", "director", "anyo", "terminada"]
 
     // tabla.style.color(color.value);
 

@@ -4,14 +4,14 @@
       "titulo": "A",
       "cadena": "B",
       "director": "C",
-      "año": "D",
+      "año": "No",
       "terminada": "F"
     },
     {
       "titulo": "1",
       "cadena": "2",
       "director": "3",
-      "año": "4",
+      "año": "Si",
       "terminada": "5"
     }
   ]

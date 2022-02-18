@@ -16,7 +16,8 @@ function cargaContenido(url, metodo) {
         peticion_http = new XMLHttpRequest();
     } else {
         alert("No tienes soporte para AJAX");
-    } if (peticion_http) {
+    }
+    if (peticion_http) {
         peticion_http.onreadystatechange = muestraContenido;
         peticion_http.open(metodo, url, true);
         peticion_http.send(null);

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="index.js"></script>
+    <style>
+        table * {
+            border: solid 2px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="POST">
+        <label for="ccaa">CC.AA</label>
+        <select name="ccaa" id="ccaa">
+        </select><br>
+
+        <label for="dosisEntregadas">Dosis Entregadas</label>
+        <input type="number" id="dosisEntregadas" name="dosisEntregadas"><br>
+
+        <label for="dosisAdministradas">Dosis Administradas</label>
+        <input type="number" id="dosisAdministradas" name="dosisAdministradas"><br>
+
+        <label for="dosisPautasCompletas">Dosis Pautas Completas</label>
+        <input type="number" id="dosisPautasCompletas" name="dosisPautasCompletas"><br>
+
+        <label for="porcentajeEntregadas">Porcentaje Entregadas</label>
+        <input type="number" id="porcentajeEntregadas" name="porcentajeEntregadas"><br>
+
+        <label for="porcentajePoblacionCompletas">Porcentaje Poblacion Completas</label>
+        <input type="number" id="porcentajePoblacionCompletas" name="porcentajePoblacionCompletas"><br>
+
+        <label for="porcentajePoblacionAdministradas">Porcentaje Poblacion Administradas</label>
+        <input type="number" id="porcentajePoblacionAdministradas" name="porcentajePoblacionAdministradas"><br>
+
+        <button id="modificar">Modificar Provincia</button>
+
+    </form>
+    <hr>
+    <div id="estado"></div>
+    <hr>
+    <button id="fetch">Cargar Datos Fetch</button>
+    <button id="xmlhttp">Cargar Datos XMLHTTP</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
