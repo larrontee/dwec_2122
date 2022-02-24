@@ -60,10 +60,10 @@ function procesarDatos(objJson) {
     }
     console.log("datos = ");
     console.log(datos);
-    //    generarTabla(datos, titulos);
+    //   generarTabla(datos, titulos);
 
-    let select = document.getElementById("select");
-    select.onreadystatechange = datoCripto;
+    let opciones = document.getElementById("select");
+    opciones.onchange = datoCripto;
     crearSelect(select, monedas, coins);
 }
 
@@ -125,56 +125,76 @@ function crearSelect(select, options, coins) {
 
 function datoCripto() {
     let objet;
-    fetch('https://api.coingecko.com/api/v3/coins/%3CCOIN_ID%3E')
+    let moneda = select.value;
+    console.log("moneda=" + moneda)
+    fetch(`https://api.coingecko.com/api/v3/coins/${moneda}`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
             }
         })
         .then((data) => {
-            objet = data;
+            let datos_moneda = {
+                name: data.name,
+                symbol: data.symbol,
+                image_url: data.image.large,
+                current_price_eur: data.market_data.current_price.eur,
+            };
+            console.log("gola");
+            console.log(datos_moneda.symbol);
+            generarFicha(datos_moneda)
+            guardar_moneda(datos_moneda)
         })
         .catch((err) => console.log(err));
 
-    let finalObjet;
-    for (let i = 0; i < objet.length; i++) {
-        if (select.value === objet[i]["id"]) {
-            finalObjet = {
-                symbol: objet[i].symbol,
-                name: objet[i].name,
-                image_url: objet[i]["image.large"],
-                current_price_eur: objet[i]["market_data.current_price.eur"]
-            }
-        }
-
-    }
 
 
-
-
-    generarFicha(finalObjet)
 
 }
 
 function generarFicha(cripto) {
-    let ficha = docuemnt.getElementById("ficha");
+    console.log(cripto);
+    console.log(cripto.symbol);
+    console.log(cripto.name);
+    console.log(cripto.image_url);
 
-    let symbol = document.creteElement("p");
-    symbol.appendChild(document.createTextNode(cripto.symbol));
+    let ficha = document.getElementById("ficha");
 
 
-    let name = document.creteElement("h1");
+    let name = document.createElement("h1");
     name.appendChild(document.createTextNode(cripto.name));
 
-    let img = document.creteElement("img");
+    let img = document.createElement("img");
     img.src = cripto.image_url;
 
-    let precio = document.creteElement("p");
-    precio.appendChild(document.createTextNode(cripto.precio));
+    let precio = document.createElement("p");
+    precio.appendChild(document.createTextNode(cripto.current_price_eur + "€"));
 
-    ficha.appendChild(symbol);
+    let simbolo = document.createElement("p");
+    simbolo.appendChild(document.createTextNode(cripto.symbol));
+
     ficha.appendChild(name);
     ficha.appendChild(img);
     ficha.appendChild(precio);
+    ficha.appendChild(simbolo);
+}
 
+function guardar_moneda(moneda) {
+    console.log("se guarda");
+    fetch("guardar_moneda.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(moneda),
+    })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((err) => console.log(err));
 }
