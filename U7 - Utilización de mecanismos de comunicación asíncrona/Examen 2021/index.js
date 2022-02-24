@@ -76,7 +76,6 @@ function modificarBD() {
             return response.json();
         })
         .then(function (result) {
-            insertarBD(result);
         })
         .catch(function (error) {
             console.log('Request failed', error);
